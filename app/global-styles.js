@@ -21,6 +21,10 @@ const GlobalStyle = createGlobalStyle`
     min-width: 100%;
   }
 
+  .is-active {
+    font-weight: bold;
+  }
+  
   p,
   label {
     font-family: Georgia, Times, 'Times New Roman', serif;
