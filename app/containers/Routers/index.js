@@ -16,27 +16,15 @@ import { useInjectReducer } from "utils/injectReducer";
 import makeSelectRouters from "./selectors";
 import reducer from "./reducer";
 
+import HelpPage from "../../components/HelpPage/Loadable";
+import AddExpensePage from "../../components/AddExpensePage/Loadable";
+import EditExpensePage from "../../components/EditExpensePage/Loadable";
+import Header from "../../components/Header/Loadable";
+import NotFoundPage from '../NotFoundPage/Loadable';
+import HomePage from '../HomePage/Loadable';
+
 import GlobalStyle from '../../global-styles';
 
-
-
-const AddExpensePage = () => (
-  <div>
-    Add expenses here
-  </div>
-);
-
-const EditExpensePage = () => (
-  <div>
-    Edit expenses here
-  </div>
-);
-
-const HelpPage = () => (
-  <div>
-    Help page here
-  </div>
-);
 
 
 export function Routers() {
@@ -50,7 +38,7 @@ export function Routers() {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/create" component={AddExpensePage} />
-            <Route exact path="/edit" component={EditExpensePage} />
+            <Route exact path="/edit/:id" component={EditExpensePage} />
             <Route exact path="/faq" component={HelpPage} />
             <Route component={NotFoundPage} />
           </Switch>
