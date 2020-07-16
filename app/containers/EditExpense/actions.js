@@ -4,10 +4,19 @@
  *
  */
 
-import { EDIT_EXPENSE_ACTION } from "./constants";
+import { 
+  EDIT_EXPENSE_SUCCESS_ACTION,
+  EDIT_EXPENSE_ERROR_ACTION 
+} from "./constants";
 
-export function editExpenseAction() {
+export function editExpenseSuccessAction() {
   return {
-    type: EDIT_EXPENSE_ACTION
+    type: EDIT_EXPENSE_SUCCESS_ACTION
+  };
+}
+
+export function editExpenseErrorAction() {
+  return {
+    type: EDIT_EXPENSE_ERROR_ACTION
   };
 }

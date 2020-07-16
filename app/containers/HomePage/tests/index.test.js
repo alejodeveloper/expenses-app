@@ -1,17 +1,47 @@
-import React from 'react';
-import { render } from 'react-testing-library';
-import { IntlProvider } from 'react-intl';
+/**
+ *
+ * Tests for HomePage
+ *
+ * @see https://github.com/react-boilerplate/react-boilerplate/tree/master/docs/testing
+ *
+ */
 
-import HomePage from '../index';
+import React from "react";
+import { render } from "react-testing-library";
+import { IntlProvider } from "react-intl";
+// import 'jest-dom/extend-expect'; // add some helpful assertions
 
-describe('<HomePage />', () => {
-  it('should render and match the snapshot', () => {
+import { HomePage } from "../index";
+import { DEFAULT_LOCALE } from "../../../i18n";
+
+describe("<HomePage />", () => {
+  it("Expect to not log errors in console", () => {
+    const spy = jest.spyOn(global.console, "error");
+    const dispatch = jest.fn();
+    render(
+      <IntlProvider locale={DEFAULT_LOCALE}>
+        <HomePage dispatch={dispatch} />
+      </IntlProvider>
+    );
+    expect(spy).not.toHaveBeenCalled();
+  });
+
+  it("Expect to have additional unit tests specified", () => {
+    expect(true).toEqual(false);
+  });
+
+  /**
+   * Unskip this test to use it
+   *
+   * @see {@link https://jestjs.io/docs/en/api#testskipname-fn}
+   */
+  it.skip("Should render and match the snapshot", () => {
     const {
-      container: { firstChild },
+      container: { firstChild }
     } = render(
-      <IntlProvider locale="en">
+      <IntlProvider locale={DEFAULT_LOCALE}>
         <HomePage />
-      </IntlProvider>,
+      </IntlProvider>
     );
     expect(firstChild).toMatchSnapshot();
   });
