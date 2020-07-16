@@ -1,6 +1,6 @@
 /**
  *
- * Asynchronously loads the component for AddExpensePage
+ * Asynchronously loads the component for AddExpense
  *
  */
 

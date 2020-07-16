@@ -1,6 +1,6 @@
 /**
  *
- * Asynchronously loads the component for EditExpensePage
+ * Asynchronously loads the component for EditExpense
  *
  */
 

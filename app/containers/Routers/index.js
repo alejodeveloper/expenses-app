@@ -17,8 +17,8 @@ import makeSelectRouters from "./selectors";
 import reducer from "./reducer";
 
 import HelpPage from "../../components/HelpPage/Loadable";
-import AddExpensePage from "../../components/AddExpensePage/Loadable";
-import EditExpensePage from "../../components/EditExpensePage/Loadable";
+import AddExpensePage from "../AddExpense/Loadable";
+import EditExpensePage from "../EditExpense/Loadable";
 import Header from "../../components/Header/Loadable";
 import NotFoundPage from '../NotFoundPage/Loadable';
 import HomePage from '../HomePage/Loadable';
