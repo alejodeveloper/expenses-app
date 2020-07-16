@@ -29,7 +29,7 @@ const homePageReducer = (state = initialState, action) =>
       case GET_EXPENSES_ERROR_ACTION:
         return {
           ...state,
-          error: action.error
+          get_expenses_error: action.error
         };
       
       default:
