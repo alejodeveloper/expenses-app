@@ -17,20 +17,22 @@ import makeSelectHomePage from "./selectors";
 import reducer from "./reducer";
 import saga from "./saga";
 import messages from "./messages";
+import { getExpensesAction } from "./actions";
 
-export function HomePage() {
+export function HomePage({ getExpenses }) {
   useInjectReducer({ key: "homePage", reducer });
   useInjectSaga({ key: "homePage", saga });
 
   return (
     <div>
+      <button onClick={getExpenses}>Random</button>
       <FormattedMessage {...messages.header} />
     </div>
   );
 }
 
 HomePage.propTypes = {
-  dispatch: PropTypes.func.isRequired
+  getExpenses: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -39,7 +41,9 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    dispatch
+    getExpenses: () => {
+      dispatch(getExpensesAction());
+    }
   };
 }
 

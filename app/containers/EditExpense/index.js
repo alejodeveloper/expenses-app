@@ -24,7 +24,7 @@ export function EditExpense() {
 
   return (
     <div>
-      <p>HIIIII</p>
+      <p className="p">HIIIII</p>
       <FormattedMessage {...messages.header} />
     </div>
   );

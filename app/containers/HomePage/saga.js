@@ -1,29 +1,35 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 
-import { Saga } from 'redux-saga';
+import { GET_EXPENSES_ACTION } from './constants';
 
-import { API_URL } from '../common/config';
+import { API_URL } from '../../commons';
 import {
   getExpensesSuccessAction,
-  getExpensesErrorAction
+  getExpensesErrorAction,
+  getExpensesAction
 } from './actions';
 
 const URL = `${API_URL}/api/v1/expenses/`;
 // Individual exports for testing
-export default function* homePageSaga() {
+export default function* homePageSaga(action) {
   // See example in containers/HomePage/saga.js
-  const response = yield call(fetch, URL, { method: 'GET' });
-  
-  if (response.status == 200 ) {
+  try {
+    const response = yield call( fetch, URL,
+      {
+        method: 'GET',
+        headers: {
+          Accept:'application/json',
+          Authorization: `Bearer ${action.token}`,
+        },
+      }
+    );
     const successResponse = yield call([response, response.json]);
     yield put(getExpensesSuccessAction(successResponse));
-    return;
+  } catch  (err){
+    yield put(getExpensesErrorAction(err));
   }
-  const errorResponse = yield call([response, response.json]);
-  yield put(getExpensesErrorAction(errorResponse));
-
 }
 
 export function* watchGetExpenses() {
-  yield takeLatest(homePageSaga);
+  yield takeLatest(GET_EXPENSES_ACTION, homePageSaga);
 }
