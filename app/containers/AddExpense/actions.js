@@ -21,3 +21,10 @@ export function addExpenseErrorAction() {
     type: ADD_EXPENSE_ERROR_ACTION
   };
 }
+
+
+export function addExpenseErrorAction() {
+  return {
+    type: ADD_EXPENSE_ERROR_ACTION
+  };
+}

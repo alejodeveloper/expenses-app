@@ -13,7 +13,7 @@ import { compose } from "redux";
 
 import { useInjectSaga } from "utils/injectSaga";
 import { useInjectReducer } from "utils/injectReducer";
-import makeSelectHomePage from "./selectors";
+import { makeSelectHomePage } from "./selectors";
 import reducer from "./reducer";
 import saga from "./saga";
 import messages from "./messages";

@@ -21,5 +21,16 @@ const makeSelectHomePage = () =>
     substate => substate
   );
 
-export default makeSelectHomePage;
-export { selectHomePageDomain };
+
+const makeSelectHomePageToken = () =>
+  createSelector(
+    selectHomePageDomain,
+    homeState => homeState.token
+  );
+
+
+export { 
+  selectHomePageDomain, 
+  makeSelectHomePage, 
+  makeSelectHomePageToken
+};

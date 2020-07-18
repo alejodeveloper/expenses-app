@@ -25,7 +25,6 @@ export function getExpensesErrorAction() {
 
 export function getExpensesAction() {
   return {
-    type: GET_EXPENSES_ACTION,
-    token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTk0OTU0NjAzLCJqdGkiOiJkMTM4YzQ3NmVmNjI0ZmUxOTljZmY2NjI0YWMyNWY2MCIsInVzZXJfaWQiOjJ9.wTPyQ6D60YsgQRykYo7BlwhA7-v9sH3uQqbWa_WOgfc'
+    type: GET_EXPENSES_ACTION
   };
 }
