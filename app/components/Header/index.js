@@ -26,6 +26,9 @@ function Header() {
     <NavLink exact to="/faq" activeClassName="is-active">
       <FormattedMessage {...messages.faq} />
     </NavLink>
+    <NavLink exact to="/login" activeClassName="is-active">
+      <FormattedMessage {...messages.login} />
+    </NavLink>
   </header>
   );
 }

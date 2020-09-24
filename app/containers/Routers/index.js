@@ -22,6 +22,7 @@ import EditExpensePage from "../EditExpense/Loadable";
 import Header from "../../components/Header/Loadable";
 import NotFoundPage from '../NotFoundPage/Loadable';
 import HomePage from '../HomePage/Loadable';
+import UserLogin from '../User/Loadable';
 
 import GlobalStyle from '../../global-styles';
 
@@ -39,6 +40,7 @@ export function Routers() {
             <Route exact path="/" component={HomePage} />
             <Route exact path="/create" component={AddExpensePage} />
             <Route exact path="/edit/:id" component={EditExpensePage} />
+            <Route exact path="/login" component={UserLogin} />
             <Route exact path="/faq" component={HelpPage} />
             <Route component={NotFoundPage} />
           </Switch>

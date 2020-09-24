@@ -28,5 +28,10 @@ export default defineMessages({
   faq: {
     id: `${scope}.faq`,
     defaultMessage: "FAQ"
-  }
+  },
+  login: {
+    id: `${scope}.login`,
+    defaultMessage: "Login"
+  },
+  
 });
